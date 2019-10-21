@@ -18,8 +18,8 @@ public class Main {
 		 System.out.print("Digite o numero de Livros a ser Emprestado: ");
 		 int num = entrada.nextInt();
                  */
-                 /*Integer RA = 120;
-                 String nome = "Bruno";
+                 /*Integer RA = 122;
+                 String nome = "Jow";
                  int num = 4;
 		 int aux;
 		 for(int i=0;i<num;i++)

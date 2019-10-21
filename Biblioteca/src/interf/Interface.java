@@ -5,11 +5,21 @@
  */
 package interf;
 
+import biblioteca.Aluno;
+import biblioteca.Controle;
+import biblioteca.Livro;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author BrunoPC
  */
 public class Interface extends javax.swing.JFrame {
+    List<Livro> livros = new ArrayList<Livro>();
+    DefaultListModel listaAlunos = new DefaultListModel();
+    DefaultListModel listaLivros = new DefaultListModel();
 
     /**
      * Creates new form Interface
@@ -29,12 +39,84 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jb_buscaAluno = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jb_cadastrarAluno = new javax.swing.JButton();
+        jb_inserir_livro = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListAlunos = new javax.swing.JList<>();
+        jLabel3 = new javax.swing.JLabel();
+        jb_reservar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextLivros = new javax.swing.JTextField();
+        jTextNome = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jListLivros = new javax.swing.JList<>();
+        jTextRaAluno = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nome do Aluno:");
 
         jLabel2.setText("RA do Aluno:");
+
+        jb_buscaAluno.setText("Buscar Aluno");
+        jb_buscaAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_buscaAlunoActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Livros");
+
+        jb_cadastrarAluno.setText("Cadastrar Aluno");
+
+        jb_inserir_livro.setText("Inserir");
+        jb_inserir_livro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_inserir_livroActionPerformed(evt);
+            }
+        });
+
+        jListAlunos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {""};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jListAlunos);
+
+        jLabel3.setText("Aluno");
+
+        jb_reservar.setText("Reservar");
+        jb_reservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_reservarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Reserva");
+
+        jLabel5.setText("Nome do Aluno:");
+
+        jLabel7.setText("Digite o código do livro desejado:");
+
+        jLabel8.setText("RA do Aluno:");
+
+        jTextNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNomeActionPerformed(evt);
+            }
+        });
+
+        jListLivros.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {""};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jListLivros);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,6 +128,57 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addContainerGap(385, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(96, 96, 96)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(85, 85, 85)
+                            .addComponent(jb_reservar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(33, 33, 33)
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6)
+                            .addGap(48, 48, 48))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(128, 128, 128))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(65, 65, 65))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jb_inserir_livro))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(14, 14, 14)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(8, 8, 8)
+                                            .addComponent(jLabel8)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jTextRaAluno))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jb_buscaAluno)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jb_cadastrarAluno)))
+                            .addGap(30, 30, 30)))
+                    .addGap(96, 96, 96)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -55,10 +188,93 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addContainerGap(282, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(29, 29, 29)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextRaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jb_buscaAluno)
+                        .addComponent(jb_cadastrarAluno))
+                    .addGap(7, 7, 7)
+                    .addComponent(jLabel4)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_inserir_livro))
+                    .addGap(6, 6, 6)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel3))
+                            .addGap(4, 4, 4)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addComponent(jb_reservar)
+                    .addContainerGap(30, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    int counter = 0;
+    private void jb_buscaAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_buscaAlunoActionPerformed
+        // TODO add your handling code here:
+        String nomeAluno = jTextNome.getText();
+        Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
+        Controle c = new Controle();
+        Aluno aux = c.buscaAluno(nomeAluno, raAluno);
+        if(aux!=null){
+            listaAlunos.add(counter, aux);
+            counter++;
+            jListAlunos.removeAll();
+            jListAlunos.setModel(listaAlunos);
+        }
+
+    }//GEN-LAST:event_jb_buscaAlunoActionPerformed
+    int cont = 0;
+    private void jb_inserir_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_inserir_livroActionPerformed
+        // TODO add your handling code here:
+        Integer codLivro = Integer.parseInt(jTextLivros.getText());
+        Controle c = new Controle();
+        //Livro aux = c.inserirLivro(codLivro);
+
+        //List<Livro> livros = new ArrayList<Livro>();
+        Livro l = new Livro(codLivro);
+        livros.add(l);
+        c.buscaLivros(livros);
+
+        listaLivros.add(cont, l);
+        cont++;
+        jListLivros.removeAll();
+        jListLivros.setModel(listaLivros);
+        /*if(aux != null){
+
+            listaLivros.add(cont, aux);
+            cont++;
+            jListLivros.removeAll();
+            jListLivros.setModel(listaLivros);
+        }*/
+        //System.out.println(aux);
+
+    }//GEN-LAST:event_jb_inserir_livroActionPerformed
+
+    private void jb_reservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_reservarActionPerformed
+        // TODO add your handling code here:
+        //selecionaAluno();
+    }//GEN-LAST:event_jb_reservarActionPerformed
+
+    private void jTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,5 +314,22 @@ public class Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jListAlunos;
+    private javax.swing.JList<String> jListLivros;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextLivros;
+    private javax.swing.JTextField jTextNome;
+    private javax.swing.JTextField jTextRaAluno;
+    private javax.swing.JButton jb_buscaAluno;
+    private javax.swing.JButton jb_cadastrarAluno;
+    private javax.swing.JButton jb_inserir_livro;
+    private javax.swing.JButton jb_reservar;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,4 +7,12 @@
       <deb>true</deb>
     </debitoAluno>
   </aluno>
+  <aluno>
+    <nome>Jow</nome>
+    <RA>122</RA>
+    <debitoAluno>
+      <codigoAluno>122</codigoAluno>
+      <deb>true</deb>
+    </debitoAluno>
+  </aluno>
 </list>

@@ -61,4 +61,9 @@ public boolean emprestar(List<Livro> livros)
     /* Aqui voc� deve intanciar um objeto emprestimo */
 	/* Aqui voc� deve chamar o metodo emprestar da classe empresitmo*/	
 }
+
+@Override
+public String toString(){
+    return nome;
+}
 }

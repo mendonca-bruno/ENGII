@@ -16,7 +16,7 @@ public class Controle {
 	  //Verifica se o aluno existe
 	  if (!a.verficaAluno())
           {
-              alunoExiste = AlunoPersistence.buscarAluno(a.RA);
+              alunoExiste = AlunoPersistence.checaAluno(a.RA);
               System.out.println("Aluno Inexistente");
               retorno = false;
           }
@@ -59,10 +59,21 @@ public class Controle {
 		  return retorno;
   }
   
+  public boolean emprestarInterface(ArrayList<Livro>livros){
+      boolean retorno = false;
+      return retorno;
+  }
+  
   public void buscaLivros(List<Livro> livros){
       for(Livro l: livros){
           if(!LivroPersistence.buscarLivro(l.codigo)) LivroPersistence.inserirLivro(l);
       }
+  }
+  
+  public Aluno buscaAluno(String nome, Integer RA){
+      
+      Aluno aux = AlunoPersistence.buscarAluno(RA);
+      return aux;
   }
 	
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Livro {
 
-	int codigo;
+	Integer codigo;
 	boolean exemplarBiblioteca;
 	Titulo titulo;
 
@@ -32,5 +32,11 @@ public class Livro {
 	}
         
         public int getCodigo(){return codigo;}
+        
+        @Override
+        public String toString(){
+            String teste = codigo.toString();
+            return teste;
+        }
 	
 }

@@ -48,7 +48,21 @@ public class AlunoPersistence {
         return retorno;
     }
     
-    public static boolean buscarAluno(int RA){
+    public static Aluno buscarAluno(int RA){
+        Aluno al = null;
+        //boolean retorno = false;
+        lerXml();
+        for(Aluno aluno : listaAlunos){
+            if(aluno.getRA() == RA){
+                al = aluno;
+            }
+        }
+        //salvarXML();
+        return al;
+    }
+    
+    public static boolean checaAluno(int RA){
+        
         boolean retorno = false;
         lerXml();
         for(Aluno aluno : listaAlunos){
