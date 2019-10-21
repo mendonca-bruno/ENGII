@@ -13,7 +13,7 @@ public class Item {
 		super();
 		this.livro = livro;
                 dataDevolucao = new Date();
-		
+		calculaDataDevolucao();
 	}
 
 
@@ -34,7 +34,7 @@ public class Item {
 	}
 	
 	//Metodo para calcular a data de Devolucao de cada Item
-	public Date calculaDataDevolucao(Date data)
+	public Date calculaDataDevolucao()
 	{
             Calendar calendario = Calendar.getInstance();
             calendario.setTime(dataDevolucao);

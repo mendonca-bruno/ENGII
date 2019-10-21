@@ -3,21 +3,23 @@ import biblioteca.Livro;
 import java.util.ArrayList;
 import java.util.List;
 import persistencia.AlunoPersistence;
+import persistencia.LivroPersistence;
 
 public class Controle {
 
   public boolean emprestar(Integer RA, String nome, ArrayList<Integer> prazos, int num)
   {
 	  boolean retorno=true;
+          boolean alunoExiste = false;
 	  /*Aqui voc� deve instaciar um objeto aluno*/
 	  Aluno a = new Aluno(nome, RA);
-          //AlunoPersistence.inserirAluno(a);
 	  //Verifica se o aluno existe
 	  if (!a.verficaAluno())
-	  {
-		  System.out.println("Aluno Inexistente");
-		  retorno = false;
-       }
+          {
+              alunoExiste = AlunoPersistence.buscarAluno(a.RA);
+              System.out.println("Aluno Inexistente");
+              retorno = false;
+          }
 	  
 	  //Verifica se o aluno possui algum Debito
 	  if (a.verificaDebito())
@@ -45,6 +47,8 @@ public class Controle {
 		   if (livros.size() > 0 )
 		   {   
 		     retorno = a.emprestar(livros);
+                     if(!alunoExiste) AlunoPersistence.inserirAluno(a);
+                     buscaLivros(livros);
 		     return retorno;
 		   }
 		   else
@@ -53,6 +57,12 @@ public class Controle {
 	  }
 	  else
 		  return retorno;
+  }
+  
+  public void buscaLivros(List<Livro> livros){
+      for(Livro l: livros){
+          if(!LivroPersistence.buscarLivro(l.codigo)) LivroPersistence.inserirLivro(l);
+      }
   }
 	
 }

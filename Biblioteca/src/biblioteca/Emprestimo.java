@@ -25,6 +25,8 @@ public class Emprestimo {
             
 		return dataEmprestimo;
 	}
+        
+        public int getIdEmprestimo(){return idEmprestimo;}
 
 	public void setDataEmprestimo(Date dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
@@ -44,8 +46,8 @@ public class Emprestimo {
           //Chama o metodo para calcular a data de devolu��o caso tenha pelo menos um livro que possa ser emprestado
     		CalculaDataDevolucao();
     		System.out.print("\nNumero de Livros Emprestados: "+livros.size());
-                System.out.print("\nData de Empr�stimo: "+this.dataEmprestimo);
-                System.out.print("\nData de Devolu��o: "+this.dataPrevista);
+                System.out.print("\nData de Empréstimo: "+this.dataEmprestimo);
+                System.out.print("\nData de Devolução: "+this.dataPrevista);
     		return true;
     	
     	

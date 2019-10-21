@@ -1,0 +1,54 @@
+<list>
+  <livro>
+    <codigo>1</codigo>
+    <exemplarBiblioteca>false</exemplarBiblioteca>
+    <titulo>
+      <prazo>2</prazo>
+      <autor>
+        <nomeAutor>Autor 1</nomeAutor>
+      </autor>
+      <area>
+        <desc>Area 1</desc>
+      </area>
+    </titulo>
+  </livro>
+  <livro>
+    <codigo>2</codigo>
+    <exemplarBiblioteca>false</exemplarBiblioteca>
+    <titulo>
+      <prazo>3</prazo>
+      <autor>
+        <nomeAutor>Autor 2</nomeAutor>
+      </autor>
+      <area>
+        <desc>Area 2</desc>
+      </area>
+    </titulo>
+  </livro>
+  <livro>
+    <codigo>3</codigo>
+    <exemplarBiblioteca>false</exemplarBiblioteca>
+    <titulo>
+      <prazo>4</prazo>
+      <autor>
+        <nomeAutor>Autor 3</nomeAutor>
+      </autor>
+      <area>
+        <desc>Area 3</desc>
+      </area>
+    </titulo>
+  </livro>
+  <livro>
+    <codigo>4</codigo>
+    <exemplarBiblioteca>false</exemplarBiblioteca>
+    <titulo>
+      <prazo>5</prazo>
+      <autor>
+        <nomeAutor>Autor 4</nomeAutor>
+      </autor>
+      <area>
+        <desc>Area 4</desc>
+      </area>
+    </titulo>
+  </livro>
+</list>

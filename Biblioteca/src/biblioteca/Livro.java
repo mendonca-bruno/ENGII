@@ -4,13 +4,14 @@ import java.util.Random;
 
 public class Livro {
 
-	int prazo;
+	int codigo;
 	boolean exemplarBiblioteca;
 	Titulo titulo;
 
 	public Livro(int codigo) {
 		super();
 		//inst�ncia um titulo e o associa ao livro
+                this.codigo = codigo;
 		titulo = new Titulo(codigo);
 		//codigo aleat�rio para definir se o livro � exemplar unico
                 Random r = new Random();
@@ -29,5 +30,7 @@ public class Livro {
 	{  return exemplarBiblioteca;
 	   
 	}
+        
+        public int getCodigo(){return codigo;}
 	
 }

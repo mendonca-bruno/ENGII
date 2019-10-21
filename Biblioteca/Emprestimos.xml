@@ -1,0 +1,74 @@
+<list>
+  <emprestimo>
+    <dataEmprestimo>2019-10-21 12:39:18.993 UTC</dataEmprestimo>
+    <dataPrevista>2019-10-28 12:39:19.3 UTC</dataPrevista>
+    <data__aux reference="../dataPrevista"/>
+    <item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>1</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>2</prazo>
+            <autor>
+              <nomeAutor>Autor 1</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 1</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao>2019-10-23 12:39:18.993 UTC</dataDevolucao>
+      </biblioteca.Item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>2</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>3</prazo>
+            <autor>
+              <nomeAutor>Autor 2</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 2</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao>2019-10-26 12:39:19.3 UTC</dataDevolucao>
+      </biblioteca.Item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>3</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>4</prazo>
+            <autor>
+              <nomeAutor>Autor 3</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 3</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao>2019-10-27 12:39:19.3 UTC</dataDevolucao>
+      </biblioteca.Item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>4</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>5</prazo>
+            <autor>
+              <nomeAutor>Autor 4</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 4</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao reference="../../../dataPrevista"/>
+      </biblioteca.Item>
+    </item>
+    <idEmprestimo>120</idEmprestimo>
+  </emprestimo>
+</list>

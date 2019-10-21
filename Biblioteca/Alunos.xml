@@ -1,0 +1,10 @@
+<list>
+  <aluno>
+    <nome>Bruno</nome>
+    <RA>120</RA>
+    <debitoAluno>
+      <codigoAluno>120</codigoAluno>
+      <deb>true</deb>
+    </debitoAluno>
+  </aluno>
+</list>

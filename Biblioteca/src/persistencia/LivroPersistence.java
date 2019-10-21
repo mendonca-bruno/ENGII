@@ -6,53 +6,43 @@
 package persistencia;
 
 import biblioteca.Aluno;
+import biblioteca.Livro;
 import com.thoughtworks.xstream.XStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import static persistencia.AlunoPersistence.lerXml;
 
 /**
  *
- * @author WinSeven
+ * @author BrunoPC
  */
-public class AlunoPersistence {
-    private static ArrayList<Aluno> listaAlunos;
+public class LivroPersistence {
+    private static ArrayList<Livro> listaLivros;
     
-    public static void inserirAluno(Aluno novoAluno){
+    public static void inserirLivro(Livro novoLivro){
         lerXml();
-        listaAlunos.add(novoAluno);
+        listaLivros.add(novoLivro);
         salvarXML();
     }
     
-    public static void excluirAluno(int RA){
+    public static void excluirLivro(int codLivro){
         lerXml();
         int index = -1;
-        for(Aluno aluno : listaAlunos){
-            if(aluno.getRA() == RA){
-                index = listaAlunos.indexOf(aluno);
+        for(Livro livro : listaLivros){
+            if(livro.getCodigo()== codLivro){
+                index = listaLivros.indexOf(livro);
             }
         }
-        if(index!=-1) listaAlunos.remove(index);
+        if(index!=-1) listaLivros.remove(index);
         salvarXML();
     }
     
-    public static boolean verificaDebito(int RA){
+    public static boolean buscarLivro(int cod){
         boolean retorno = false;
         lerXml();
-        for(Aluno aluno : listaAlunos){
-            if(aluno.getRA() == RA){
-                if(aluno.getDebitoAluno().verificaDebito())retorno = true;
-            }
-        }
-        //salvarXML();
-        return retorno;
-    }
-    
-    public static boolean buscarAluno(int RA){
-        boolean retorno = false;
-        lerXml();
-        for(Aluno aluno : listaAlunos){
-            if(aluno.getRA() == RA){
+        for(Livro livro : listaLivros){
+            if(livro.getCodigo() == cod){
                 retorno = true;
             }
         }
@@ -62,16 +52,16 @@ public class AlunoPersistence {
     
     //le o que esta no XML e coloca no array
     public static void lerXml(){
-        File arquivo = new File("Alunos.xml");
+        File arquivo = new File("Livros.xml");
         if(arquivo.exists()){
             XStream xstream = new XStream();
             xstream.allowTypesByWildcard(new String[] {
                 "com.your.package.**"
             });
-            xstream.alias("aluno", Aluno.class);
-            listaAlunos = (ArrayList<Aluno>) xstream.fromXML(arquivo);
+            xstream.alias("livro", Livro.class);
+            listaLivros = (ArrayList<Livro>) xstream.fromXML(arquivo);
         }else{
-            listaAlunos = new ArrayList<>();
+            listaLivros = new ArrayList<>();
         }
     }
     
@@ -81,10 +71,10 @@ public class AlunoPersistence {
         xstream.allowTypesByWildcard(new String[] {
                 "com.your.package.**"
             });
-        xstream.alias("aluno",Aluno.class);
+        xstream.alias("livro",Livro.class);
         try {
-            FileWriter escritor =  new FileWriter ("Alunos.xml");
-            escritor.write(xstream.toXML(listaAlunos));
+            FileWriter escritor =  new FileWriter ("Livros.xml");
+            escritor.write(xstream.toXML(listaLivros));
             escritor.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
