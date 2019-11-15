@@ -15,4 +15,36 @@
       <deb>true</deb>
     </debitoAluno>
   </aluno>
+  <aluno>
+    <nome>joaquim</nome>
+    <RA>125</RA>
+    <debitoAluno>
+      <codigoAluno>125</codigoAluno>
+      <deb>false</deb>
+    </debitoAluno>
+  </aluno>
+  <aluno>
+    <nome>Joel</nome>
+    <RA>144</RA>
+    <debitoAluno>
+      <codigoAluno>144</codigoAluno>
+      <deb>false</deb>
+    </debitoAluno>
+  </aluno>
+  <aluno>
+    <nome></nome>
+    <RA>150</RA>
+    <debitoAluno>
+      <codigoAluno>150</codigoAluno>
+      <deb>false</deb>
+    </debitoAluno>
+  </aluno>
+  <aluno>
+    <nome>Chris</nome>
+    <RA>151</RA>
+    <debitoAluno>
+      <codigoAluno>151</codigoAluno>
+      <deb>false</deb>
+    </debitoAluno>
+  </aluno>
 </list>

@@ -127,4 +127,84 @@
     </item>
     <idEmprestimo>122</idEmprestimo>
   </emprestimo>
+  <emprestimo>
+    <dataEmprestimo>2019-11-15 21:37:08.121 UTC</dataEmprestimo>
+    <dataPrevista>2019-11-17 21:37:08.126 UTC</dataPrevista>
+    <data__aux reference="../dataPrevista"/>
+    <item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>1</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>2</prazo>
+            <autor>
+              <nomeAutor>Autor 1</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 1</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao reference="../../../dataPrevista"/>
+      </biblioteca.Item>
+    </item>
+    <idEmprestimo>144</idEmprestimo>
+  </emprestimo>
+  <emprestimo>
+    <dataEmprestimo>2019-11-15 21:37:55.733 UTC</dataEmprestimo>
+    <dataPrevista>2019-11-21 21:37:55.733 UTC</dataPrevista>
+    <data__aux reference="../dataPrevista"/>
+    <item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>1</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>2</prazo>
+            <autor>
+              <nomeAutor>Autor 1</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 1</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao>2019-11-17 21:37:55.733 UTC</dataDevolucao>
+      </biblioteca.Item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>2</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>3</prazo>
+            <autor>
+              <nomeAutor>Autor 2</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 2</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao>2019-11-20 21:37:55.733 UTC</dataDevolucao>
+      </biblioteca.Item>
+      <biblioteca.Item>
+        <livro>
+          <codigo>3</codigo>
+          <exemplarBiblioteca>false</exemplarBiblioteca>
+          <titulo>
+            <prazo>4</prazo>
+            <autor>
+              <nomeAutor>Autor 3</nomeAutor>
+            </autor>
+            <area>
+              <desc>Area 3</desc>
+            </area>
+          </titulo>
+        </livro>
+        <dataDevolucao reference="../../../dataPrevista"/>
+      </biblioteca.Item>
+    </item>
+    <idEmprestimo>151</idEmprestimo>
+  </emprestimo>
 </list>

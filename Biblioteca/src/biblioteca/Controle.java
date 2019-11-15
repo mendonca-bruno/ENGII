@@ -14,9 +14,9 @@ public class Controle {
 	  /*Aqui voc� deve instaciar um objeto aluno*/
 	  Aluno a = new Aluno(nome, RA);
 	  //Verifica se o aluno existe
-	  if (!a.verficaAluno())
+	  if (!a.verficaAluno(a.RA))
           {
-              alunoExiste = AlunoPersistence.checaAluno(a.RA);
+              //alunoExiste = AlunoPersistence.checaAluno(a.RA);
               System.out.println("Aluno Inexistente");
               retorno = false;
           }
@@ -59,8 +59,20 @@ public class Controle {
 		  return retorno;
   }
   
-  public boolean emprestarInterface(ArrayList<Livro>livros){
+  public boolean emprestarInterface(Aluno aluno,List<Livro>listaLivros){
       boolean retorno = false;
+      List<Livro> livros = new ArrayList<Livro>();
+      
+      for(Livro l:listaLivros){
+          if(!l.verificaLivro()) livros.add(l);
+          
+      }
+      if(livros.size()>0){
+          retorno = aluno.emprestar(livros);
+          buscaLivros(livros);
+          return retorno;
+      }
+      
       return retorno;
   }
   
@@ -70,10 +82,41 @@ public class Controle {
       }
   }
   
+  public boolean buscaLivros(Livro l){
+      boolean retorno = false;
+      if(LivroPersistence.buscarLivro(l.codigo)){
+          retorno = true;
+          return retorno;
+      }
+      return retorno;
+  }
+  
+  public boolean adicionaLivro(Livro l){
+      LivroPersistence.inserirLivro(l);
+      return true;
+  }
+  
+  
   public Aluno buscaAluno(String nome, Integer RA){
       
       Aluno aux = AlunoPersistence.buscarAluno(RA);
       return aux;
+  }
+  
+  public Aluno cadastrarAluno(String nome, Integer RA){
+      Aluno aux = null;
+      if(!AlunoPersistence.checaAluno(RA)){
+          aux = new Aluno(nome, RA);
+          AlunoPersistence.inserirAluno(aux);
+          return aux;
+      }
+      //aux = AlunoPersistence.buscarAluno(RA);
+      return aux;
+  }
+  
+  public boolean verificaDebitoAluno(int RA){
+      if(AlunoPersistence.verificaDebito(RA)) return true;
+      return false;
   }
 	
 }

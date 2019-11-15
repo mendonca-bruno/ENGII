@@ -36,11 +36,11 @@ public Debito getDebitoAluno(){
     return this.debitoAluno;
 }
 
-public boolean verficaAluno()
+public boolean verficaAluno(int RA)
 {   //Se o RA � null � retorna erro - m�todo aleat�rio ?
-    Random r = new Random();
-    if(this.RA == r.nextInt(100)) return false;
-    else return true;
+    //Random r = new Random();
+    if(AlunoPersistence.checaAluno(RA)) return true;
+    else return false;
 }
 
 public boolean verificaDebito()
