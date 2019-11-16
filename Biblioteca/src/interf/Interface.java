@@ -9,12 +9,15 @@ import biblioteca.Aluno;
 import biblioteca.Controle;
 import biblioteca.Livro;
 import controle.AlunoControl;
+import controle.EmprestimoControl;
 import controle.LivroControl;
 import dao.Dao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import modelo.Emprestimo;
+import modelo.Item;
 
 /**
  *
@@ -59,6 +62,7 @@ public class Interface extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jListLivros = new javax.swing.JList<String>();
         jTextRaAluno = new javax.swing.JTextField();
+        jb_devolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,19 +126,26 @@ public class Interface extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jListLivros);
 
+        jb_devolver.setText("Devolver");
+        jb_devolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_devolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addComponent(jb_buscaAluno)
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(181, 181, 181)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jb_reservar)
-                    .addGap(213, 213, 213))
+                    .addComponent(jb_buscaAluno))
+                .addGap(33, 33, 33)
+                .addComponent(jb_devolver)
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(129, 129, 129)
                     .addComponent(jLabel3)
@@ -160,31 +171,37 @@ public class Interface extends javax.swing.JFrame {
                             .addComponent(jb_cadastrarAluno)))
                     .addGap(126, 126, 126))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addComponent(jLabel4)
-                    .addGap(224, 224, 224))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(96, 96, 96)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(65, 65, 65))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jb_inserir_livro)))
-                    .addGap(96, 96, 96)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(224, 224, 224))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(65, 65, 65))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jb_inserir_livro)))
+                            .addGap(96, 96, 96)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(jb_buscaAluno)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_reservar)
+                    .addComponent(jb_devolver))
+                .addGap(27, 27, 27))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(29, 29, 29)
@@ -213,9 +230,7 @@ public class Interface extends javax.swing.JFrame {
                             .addGap(4, 4, 4)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(jb_reservar)
-                    .addContainerGap(30, Short.MAX_VALUE)))
+                    .addContainerGap(71, Short.MAX_VALUE)))
         );
 
         pack();
@@ -369,6 +384,23 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_cadastrarAlunoActionPerformed
 
+    private void jb_devolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_devolverActionPerformed
+        //Dao<modelo.Aluno> dao = new Dao(modelo.Aluno.class);
+        Integer index = jListAlunos.getSelectedIndex();
+        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
+        EmprestimoControl ec = new EmprestimoControl();
+        modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
+        
+        Emprestimo e = ec.checaEmprestimo(a1.getRA());
+        
+        if(e!=null){
+            JOptionPane.showMessageDialog(null, "Boom!");
+            for(Item i : e.getItem()){
+                System.out.println(i.getDataDevolucao());
+            }
+        }
+    }//GEN-LAST:event_jb_devolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -420,6 +452,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextRaAluno;
     private javax.swing.JButton jb_buscaAluno;
     private javax.swing.JButton jb_cadastrarAluno;
+    private javax.swing.JButton jb_devolver;
     private javax.swing.JButton jb_inserir_livro;
     private javax.swing.JButton jb_reservar;
     // End of variables declaration//GEN-END:variables

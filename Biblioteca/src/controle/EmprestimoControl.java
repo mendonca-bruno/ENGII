@@ -5,10 +5,19 @@
  */
 package controle;
 
+import dao.Dao;
+import modelo.Emprestimo;
+
 /**
  *
  * @author BrunoPC
  */
 public class EmprestimoControl {
+    Dao<Emprestimo> dao = new Dao(Emprestimo.class);
     
+    public Emprestimo checaEmprestimo(int chave){
+        Emprestimo emp;
+        emp = dao.buscaCodigo(chave);
+        return emp;
+    }
 }
