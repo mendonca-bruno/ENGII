@@ -53,6 +53,7 @@ public boolean verificaDebito()
 //Metodo que delega a funcionalidade de emprestar para a classe emprestimo
 public boolean emprestar(List<Livro> livros)
 {
+    
     Emprestimo emp = new Emprestimo(this);
     emp.emprestar((ArrayList<Livro>) livros);
     debitoAluno.setDeb(true);

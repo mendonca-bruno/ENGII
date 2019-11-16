@@ -299,13 +299,13 @@ public class Interface extends javax.swing.JFrame {
     
     private void jb_reservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_reservarActionPerformed
         Integer index = jListAlunos.getSelectedIndex();
-        Aluno a = (Aluno)listaAlunos.getElementAt(index);
-        Controle c = new Controle();
-        if(c.verificaDebitoAluno(a.getRA())){
+        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
+        AlunoControl ac = new AlunoControl();
+        if(ac.verificaDebito(a.getRA())){
             JOptionPane.showMessageDialog(null, "Aluno em débito!");
         }
         else{
-            //if(c.emprestarInterface(a, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
+            if(ac.emprestar(a, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
         }
         
     }//GEN-LAST:event_jb_reservarActionPerformed

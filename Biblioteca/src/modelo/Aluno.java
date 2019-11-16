@@ -7,10 +7,13 @@ package modelo;
 
 import dao.Dao;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import persistencia.EmprestimoPersistence;
 
 /**
  *
@@ -90,5 +93,17 @@ public class Aluno implements Serializable {
     public String toString() {
         return nome;
     }
+    
+    public boolean emprestar(List<Livro> livros)
+{
+    Dao<Emprestimo> dao = new Dao(Emprestimo.class);
+    Dao<Aluno> daoaluno = new Dao(Aluno.class);
+    Emprestimo emp = new Emprestimo(this);
+    emp.emprestar((ArrayList<Livro>) livros);
+    dao.persist(emp);
+    return true;
+    /* Aqui voc� deve intanciar um objeto emprestimo */
+	/* Aqui voc� deve chamar o metodo emprestar da classe empresitmo*/	
+}
     
 }

@@ -6,7 +6,10 @@
 package controle;
 
 import dao.Dao;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.Aluno;
+import modelo.Livro;
 
 /**
  *
@@ -34,5 +37,20 @@ public class AlunoControl {
         dao.persist(a);
         if(checaAluno(RA)!= null) return true;
         return false;        
+    }
+    
+    public boolean emprestar(Aluno aluno, List<Livro> listaLivros){
+        boolean retorno = false;
+        List<Livro> livros = new ArrayList<Livro>();
+        
+        for(Livro l:listaLivros){
+            if(!l.isExemplarBiblioteca()) livros.add(l);
+        }
+        
+        if(livros.size()>0){
+            retorno = aluno.emprestar(livros);
+            return retorno;
+        }
+        return retorno;
     }
 }

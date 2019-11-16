@@ -5,6 +5,7 @@
  */
 package modelo;
 import dao.Dao;
+import java.io.Serializable;
 import modelo.Debito;
 import java.util.Random;
 import javax.persistence.CascadeType;
@@ -20,7 +21,7 @@ import javax.persistence.OneToMany;
  * @author BrunoPC
  */
 @Entity
-public class Livro {
+public class Livro implements Serializable{
     @Id
     Integer codigo;
     boolean exemplarBiblioteca;
