@@ -18,6 +18,19 @@ import modelo.Livro;
 public class AlunoControl {
     Dao<Aluno> dao = new Dao(Aluno.class);
     
+    public void alterarAluno(Aluno a){
+        dao.alterar(a);
+    }
+    
+    public void alteraDebito(Aluno a){
+        if(verificaDebito(a.getRA())){
+            a.getDebitoAluno().setDeb(false);
+        }else{
+            a.getDebitoAluno().setDeb(true);
+        }
+        alterarAluno(a);
+    }
+    
     public Aluno checaAluno(int chave){
         Aluno al;
         al = dao.buscaCodigo(chave);

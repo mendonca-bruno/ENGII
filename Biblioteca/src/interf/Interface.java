@@ -10,6 +10,7 @@ import biblioteca.Controle;
 import biblioteca.Livro;
 import controle.AlunoControl;
 import controle.LivroControl;
+import dao.Dao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -298,14 +299,37 @@ public class Interface extends javax.swing.JFrame {
     }
     
     private void jb_reservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_reservarActionPerformed
+        Dao<modelo.Aluno> dao = new Dao(modelo.Aluno.class);
         Integer index = jListAlunos.getSelectedIndex();
         modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
+        AlunoControl c = new AlunoControl();
+        modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
+        //a1.getDebitoAluno().setDeb(true);
+        //dao.alterar(a1);
+        //c.alteraDebito(a1);
+        //System.out.println(c.verificaDebito(a1.getRA()));
+        /*Integer index = jListAlunos.getSelectedIndex();
+        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
         AlunoControl ac = new AlunoControl();
-        if(ac.verificaDebito(a.getRA())){
+        
+        a = ac.checaAluno(a.getRA());
+        System.out.println(a.getDebitoAluno().verificaDebito());
+        a.getDebitoAluno().setDeb(true);
+        ac.alterarAluno(a);*/
+        //a = ac.checaAluno(a.getRA());
+        //System.out.println(a.getDebitoAluno().verificaDebito());
+        if(c.verificaDebito(a1.getRA())){
             JOptionPane.showMessageDialog(null, "Aluno em débito!");
         }
         else{
-            if(ac.emprestar(a, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
+            //System.out.println("your own personal jesus");
+            try {
+                if(c.emprestar(a1, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
+                c.alteraDebito(a1);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Apenas uma reserva por pessoa permitida!");
+            }
+            
         }
         
     }//GEN-LAST:event_jb_reservarActionPerformed

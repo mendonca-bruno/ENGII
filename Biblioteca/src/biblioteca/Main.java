@@ -35,13 +35,14 @@ public class Main {
 		 
                 Controle c = new Controle();
                 c.emprestar(RA, nome, codigos, num);*/
-            
+            /*
             Dao<Aluno> dao = new Dao(Aluno.class);
             AlunoControl c = new AlunoControl();
             modelo.Aluno a = new Aluno("Bruno Mendonca",120156);
             a.getDebitoAluno().setDeb(false);
             dao.alterar(a);
-            System.out.println(c.verificaDebito(120157));
+            System.out.println(c.verificaDebito(120156));
+            */
             Interface intef = new Interface();
             intef.setVisible(true);
             //Aluno aluno = new Aluno("Luiz", 120159);
