@@ -8,6 +8,7 @@ package interf;
 import biblioteca.Aluno;
 import biblioteca.Controle;
 import biblioteca.Livro;
+import controle.AlunoControl;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -222,8 +223,9 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nomeAluno = jTextNome.getText();
         Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
-        Controle c = new Controle();
-        Aluno aux = c.buscaAluno(nomeAluno, raAluno);
+        //Controle c = new Controle();
+        AlunoControl ac = new AlunoControl();
+        modelo.Aluno aux = ac.checaAluno(raAluno);
         if(aux!=null){
             listaAlunos.removeAllElements();
             listaAlunos.addElement(aux);
@@ -232,6 +234,9 @@ public class Interface extends javax.swing.JFrame {
             jListAlunos.removeAll();
             jListAlunos.setModel(listaAlunos);
             
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Aluno Inexistente");
         }
 
     }//GEN-LAST:event_jb_buscaAlunoActionPerformed
@@ -291,12 +296,24 @@ public class Interface extends javax.swing.JFrame {
 
     private void jb_cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cadastrarAlunoActionPerformed
         String nomeAluno = jTextNome.getText();
-        Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
-        Controle c = new Controle();
-        if(c.cadastrarAluno(nomeAluno, raAluno)!=null){
+        String ra = jTextRaAluno.getText();
+        try {
+            Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "RA somente números!");
+        }
+        AlunoControl ac = new AlunoControl();
+        /*if(c.cadastrarAluno(nomeAluno, raAluno)!=null){
             JOptionPane.showMessageDialog(null, "Aluno Cadastrado");
         }else{
             JOptionPane.showMessageDialog(null, "Aluno já existe");
+        }*/
+        if(nomeAluno.isEmpty() || ra.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Nome e RA DEVEM estar preenchidos!");
+        }else{
+            Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
+            if(ac.inserirAluno(raAluno,nomeAluno)) JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+            else JOptionPane.showMessageDialog(null, "Erro ao cadastrar novo aluno.");
         }
     }//GEN-LAST:event_jb_cadastrarAlunoActionPerformed
 
