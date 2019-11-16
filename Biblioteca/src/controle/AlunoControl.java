@@ -31,7 +31,7 @@ public class AlunoControl {
     
     public boolean inserirAluno(int RA, String nome){
         Aluno a = new Aluno(nome,RA);
-        dao.inserir(a);
+        dao.persist(a);
         if(checaAluno(RA)!= null) return true;
         return false;        
     }

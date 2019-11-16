@@ -9,6 +9,7 @@ import biblioteca.Aluno;
 import biblioteca.Controle;
 import biblioteca.Livro;
 import controle.AlunoControl;
+import controle.LivroControl;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -19,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author BrunoPC
  */
 public class Interface extends javax.swing.JFrame {
-    List<Livro> livros = new ArrayList<Livro>();
+    List<modelo.Livro> livros = new ArrayList<modelo.Livro>();
     DefaultListModel listaAlunos = new DefaultListModel();
     DefaultListModel listaLivros = new DefaultListModel();
     
@@ -244,11 +245,12 @@ public class Interface extends javax.swing.JFrame {
     private void jb_inserir_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_inserir_livroActionPerformed
         // TODO add your handling code here:
         Integer codLivro = Integer.parseInt(jTextLivros.getText());
-        Controle c = new Controle();
+        //Controle c = new Controle();
+        LivroControl lc = new LivroControl();
         //Livro aux = c.inserirLivro(codLivro);
 
         //List<Livro> livros = new ArrayList<Livro>();
-        Livro l = new Livro(codLivro);
+        /*Livro l = new Livro(codLivro);
         if(!checaLivro(codLivro)){
             livros.add(l);
             if(!c.buscaLivros(l)){
@@ -259,7 +261,25 @@ public class Interface extends javax.swing.JFrame {
             cont++;
             jListLivros.removeAll();
             jListLivros.setModel(listaLivros);
+        }*/
+        modelo.Livro l = lc.checaLivro(codLivro);
+        if(!checaLivro(codLivro)){
+            if(l==null){ 
+                JOptionPane.showMessageDialog(null, "Livro nao existente será criado e adicionado");
+                if(lc.inserirLivro(codLivro)){
+                    JOptionPane.showMessageDialog(null, "Livro adicionado!");
+                    l = lc.checaLivro(codLivro);
+                }
+            }
+            livros.add(l);
+            listaLivros.add(cont,l);
+            cont++;
+            jListLivros.removeAll();
+            jListLivros.setModel(listaLivros);
+        }else{
+            JOptionPane.showMessageDialog(null, "Livro ja inserido!");
         }
+        
         /*if(aux != null){
 
             listaLivros.add(cont, aux);
@@ -271,7 +291,7 @@ public class Interface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jb_inserir_livroActionPerformed
     private boolean checaLivro(int id){
-        for(Livro l : livros){
+        for(modelo.Livro l : livros){
             if(l.getCodigo()==id) return true;
         }
         return false;
@@ -285,7 +305,7 @@ public class Interface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Aluno em débito!");
         }
         else{
-            if(c.emprestarInterface(a, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
+            //if(c.emprestarInterface(a, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
         }
         
     }//GEN-LAST:event_jb_reservarActionPerformed
@@ -297,23 +317,31 @@ public class Interface extends javax.swing.JFrame {
     private void jb_cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cadastrarAlunoActionPerformed
         String nomeAluno = jTextNome.getText();
         String ra = jTextRaAluno.getText();
+        AlunoControl ac = new AlunoControl();
         try {
             Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "RA somente números!");
         }
-        AlunoControl ac = new AlunoControl();
+        
         /*if(c.cadastrarAluno(nomeAluno, raAluno)!=null){
             JOptionPane.showMessageDialog(null, "Aluno Cadastrado");
         }else{
             JOptionPane.showMessageDialog(null, "Aluno já existe");
         }*/
+        
         if(nomeAluno.isEmpty() || ra.isEmpty()){
             JOptionPane.showMessageDialog(null, "Nome e RA DEVEM estar preenchidos!");
         }else{
             Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
-            if(ac.inserirAluno(raAluno,nomeAluno)) JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
-            else JOptionPane.showMessageDialog(null, "Erro ao cadastrar novo aluno.");
+            if(ac.checaAluno(raAluno)!=null){
+                JOptionPane.showMessageDialog(null, "RA ja esta sendo usado!");
+            }
+            else{
+                if(ac.inserirAluno(raAluno,nomeAluno)) JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+                else JOptionPane.showMessageDialog(null, "Erro ao cadastrar novo aluno.");
+            }
+            
         }
     }//GEN-LAST:event_jb_cadastrarAlunoActionPerformed
 
