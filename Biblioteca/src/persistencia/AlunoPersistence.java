@@ -74,6 +74,21 @@ public class AlunoPersistence {
         return retorno;
     }
     
+    public static Aluno alteraAluno(int RA){
+        
+        Aluno retorno = null;
+        lerXml();
+        for(Aluno aluno : listaAlunos){
+            if(aluno.getRA() == RA){
+                aluno.getDebitoAluno().setDeb(true);
+                salvarXML();
+                retorno = aluno;
+            }
+        }
+        //salvarXML();
+        return retorno;
+    }
+    
     //le o que esta no XML e coloca no array
     public static void lerXml(){
         File arquivo = new File("Alunos.xml");

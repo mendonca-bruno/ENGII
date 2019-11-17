@@ -47,4 +47,12 @@
       <deb>false</deb>
     </debitoAluno>
   </aluno>
+  <aluno>
+    <nome>Mendonca</nome>
+    <RA>120156</RA>
+    <debitoAluno>
+      <codigoAluno>120156</codigoAluno>
+      <deb>true</deb>
+    </debitoAluno>
+  </aluno>
 </list>
