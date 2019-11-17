@@ -139,98 +139,90 @@ public class Interface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_reservar)
-                    .addComponent(jb_buscaAluno))
-                .addGap(33, 33, 33)
-                .addComponent(jb_devolver)
-                .addContainerGap(142, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(129, 129, 129)
-                    .addComponent(jLabel3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6)
-                    .addGap(144, 144, 144))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(110, 110, 110)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextRaAluno))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(201, 201, 201)
-                            .addComponent(jb_cadastrarAluno)))
-                    .addGap(126, 126, 126))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(96, 96, 96)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(224, 224, 224))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(65, 65, 65))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jb_inserir_livro)))
-                            .addGap(96, 96, 96)))))
+                .addComponent(jb_buscaAluno)
+                .addGap(18, 18, 18)
+                .addComponent(jb_cadastrarAluno)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(96, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextRaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(158, 158, 158))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel7))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_inserir_livro)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(44, 44, 44))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jb_reservar)
+                                .addGap(40, 40, 40)
+                                .addComponent(jb_devolver)))
+                        .addGap(90, 90, 90))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jb_buscaAluno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_reservar)
-                    .addComponent(jb_devolver))
-                .addGap(27, 27, 27))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextRaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jb_cadastrarAluno)
-                    .addGap(7, 7, 7)
-                    .addComponent(jLabel4)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jb_inserir_livro))
-                    .addGap(6, 6, 6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel3))
-                            .addGap(4, 4, 4)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(71, Short.MAX_VALUE)))
+                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextRaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_buscaAluno)
+                    .addComponent(jb_cadastrarAluno))
+                .addGap(4, 4, 4)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_inserir_livro)
+                    .addComponent(jTextLivros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jb_reservar)
+                            .addComponent(jb_devolver))
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -238,72 +230,60 @@ public class Interface extends javax.swing.JFrame {
     int counter = 0;
     private void jb_buscaAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_buscaAlunoActionPerformed
         // TODO add your handling code here:
+        
         String nomeAluno = jTextNome.getText();
-        Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
-        //Controle c = new Controle();
-        AlunoControl ac = new AlunoControl();
-        modelo.Aluno aux = ac.checaAluno(raAluno);
-        if(aux!=null){
-            listaAlunos.removeAllElements();
-            listaAlunos.addElement(aux);
-            //listaAlunos.add(counter, aux);
-            counter++;
-            jListAlunos.removeAll();
-            jListAlunos.setModel(listaAlunos);
+        try {
+            Integer raAluno = Integer.parseInt(jTextRaAluno.getText());
+            //Controle c = new Controle();
+            AlunoControl ac = new AlunoControl();
+            modelo.Aluno aux = ac.checaAluno(raAluno);
+            if(aux!=null){
+                listaAlunos.removeAllElements();
+                listaAlunos.addElement(aux);
+                //listaAlunos.add(counter, aux);
+                counter++;
+                jListAlunos.removeAll();
+                jListAlunos.setModel(listaAlunos);
             
         }
         else{
             JOptionPane.showMessageDialog(null, "Aluno Inexistente");
         }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Preencha o RA do aluno!");
+        }
+        
+        
+        
 
     }//GEN-LAST:event_jb_buscaAlunoActionPerformed
     int cont = 0;
     private void jb_inserir_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_inserir_livroActionPerformed
-        // TODO add your handling code here:
-        Integer codLivro = Integer.parseInt(jTextLivros.getText());
-        //Controle c = new Controle();
-        LivroControl lc = new LivroControl();
-        //Livro aux = c.inserirLivro(codLivro);
-
-        //List<Livro> livros = new ArrayList<Livro>();
-        /*Livro l = new Livro(codLivro);
-        if(!checaLivro(codLivro)){
-            livros.add(l);
-            if(!c.buscaLivros(l)){
-                JOptionPane.showMessageDialog(null, "Livro não existente será adicionado");
-                c.adicionaLivro(l);
-            }
-            listaLivros.add(cont, l);
-            cont++;
-            jListLivros.removeAll();
-            jListLivros.setModel(listaLivros);
-        }*/
-        modelo.Livro l = lc.checaLivro(codLivro);
-        if(!checaLivro(codLivro)){
-            if(l==null){ 
-                JOptionPane.showMessageDialog(null, "Livro nao existente será criado e adicionado");
-                if(lc.inserirLivro(codLivro)){
-                    JOptionPane.showMessageDialog(null, "Livro adicionado!");
-                    l = lc.checaLivro(codLivro);
+        try {
+            Integer codLivro = Integer.parseInt(jTextLivros.getText());
+            LivroControl lc = new LivroControl();
+            modelo.Livro l = lc.checaLivro(codLivro);
+            if(!checaLivro(codLivro)){
+                if(l==null){ 
+                    JOptionPane.showMessageDialog(null, "Livro nao existente será criado e adicionado");
+                    if(lc.inserirLivro(codLivro)){
+                        JOptionPane.showMessageDialog(null, "Livro adicionado!");
+                        l = lc.checaLivro(codLivro);
+                    }
                 }
+                livros.add(l);
+                listaLivros.add(cont,l);
+                cont++;
+                jListLivros.removeAll();
+                jListLivros.setModel(listaLivros);
+            }else{
+                JOptionPane.showMessageDialog(null, "Livro ja inserido!");
             }
-            livros.add(l);
-            listaLivros.add(cont,l);
-            cont++;
-            jListLivros.removeAll();
-            jListLivros.setModel(listaLivros);
-        }else{
-            JOptionPane.showMessageDialog(null, "Livro ja inserido!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Digite o código do livro!");
         }
         
-        /*if(aux != null){
-
-            listaLivros.add(cont, aux);
-            cont++;
-            jListLivros.removeAll();
-            jListLivros.setModel(listaLivros);
-        }*/
-        //System.out.println(aux);
+        
 
     }//GEN-LAST:event_jb_inserir_livroActionPerformed
     private boolean checaLivro(int id){
@@ -314,38 +294,38 @@ public class Interface extends javax.swing.JFrame {
     }
     
     private void jb_reservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_reservarActionPerformed
-        Dao<modelo.Aluno> dao = new Dao(modelo.Aluno.class);
-        Integer index = jListAlunos.getSelectedIndex();
-        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
-        AlunoControl c = new AlunoControl();
-        modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
-        //a1.getDebitoAluno().setDeb(true);
-        //dao.alterar(a1);
-        //c.alteraDebito(a1);
-        //System.out.println(c.verificaDebito(a1.getRA()));
-        /*Integer index = jListAlunos.getSelectedIndex();
-        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
-        AlunoControl ac = new AlunoControl();
         
-        a = ac.checaAluno(a.getRA());
-        System.out.println(a.getDebitoAluno().verificaDebito());
-        a.getDebitoAluno().setDeb(true);
-        ac.alterarAluno(a);*/
-        //a = ac.checaAluno(a.getRA());
-        //System.out.println(a.getDebitoAluno().verificaDebito());
-        if(c.verificaDebito(a1.getRA())){
-            JOptionPane.showMessageDialog(null, "Aluno em débito!");
-        }
-        else{
-            //System.out.println("your own personal jesus");
-            try {
-                if(c.emprestar(a1, livros)) JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!");
-                c.alteraDebito(a1);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Apenas uma reserva por pessoa permitida!");
+        try {
+            Dao<modelo.Aluno> dao = new Dao(modelo.Aluno.class);
+            Integer index = jListAlunos.getSelectedIndex();
+            modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
+            AlunoControl c = new AlunoControl();
+            modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
+            if(c.verificaDebito(a1.getRA())){
+                JOptionPane.showMessageDialog(null, "Aluno em débito!");
             }
-            
+            else{
+                //System.out.println("your own personal jesus");
+                try {
+                    if(c.emprestar(a1, livros)) {
+                        EmprestimoControl ec = new EmprestimoControl();
+                        Emprestimo e = ec.checaEmprestimo(a1.getRA());
+                        JOptionPane.showMessageDialog(null, "Empréstimo realizado com sucesso!"
+                                + "\nData Devolução:" +e.getDataPrevista());
+                        c.alteraDebito(a1);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Deve haver pelo menos 1 livro para efetuar a reserva.");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Apenas uma reserva por pessoa permitida!");
+                }
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um aluno!");
         }
+        
         
     }//GEN-LAST:event_jb_reservarActionPerformed
 
@@ -362,12 +342,6 @@ public class Interface extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "RA somente números!");
         }
-        
-        /*if(c.cadastrarAluno(nomeAluno, raAluno)!=null){
-            JOptionPane.showMessageDialog(null, "Aluno Cadastrado");
-        }else{
-            JOptionPane.showMessageDialog(null, "Aluno já existe");
-        }*/
         
         if(nomeAluno.isEmpty() || ra.isEmpty()){
             JOptionPane.showMessageDialog(null, "Nome e RA DEVEM estar preenchidos!");
@@ -386,19 +360,25 @@ public class Interface extends javax.swing.JFrame {
 
     private void jb_devolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_devolverActionPerformed
         //Dao<modelo.Aluno> dao = new Dao(modelo.Aluno.class);
-        Integer index = jListAlunos.getSelectedIndex();
-        modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
-        EmprestimoControl ec = new EmprestimoControl();
-        modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
-        
-        Emprestimo e = ec.checaEmprestimo(a1.getRA());
-        
-        if(e!=null){
-            JOptionPane.showMessageDialog(null, "Boom!");
-            for(Item i : e.getItem()){
-                System.out.println(i.getDataDevolucao());
+        try {
+            Integer index = jListAlunos.getSelectedIndex();
+            modelo.Aluno a = (modelo.Aluno)listaAlunos.getElementAt(index);
+            EmprestimoControl ec = new EmprestimoControl();
+
+            modelo.Aluno a1 = new modelo.Aluno(a.getNome(),a.getRA());
+
+            Emprestimo e = ec.checaEmprestimo(a1.getRA());
+
+            if(e!=null && e.isAtivo()){
+                InterfaceDevolucao i = new InterfaceDevolucao(e,a1);
+                i.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "Não há reservas para este RA!");
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Nenhum aluno selecionado");
         }
+        
     }//GEN-LAST:event_jb_devolverActionPerformed
 
     /**

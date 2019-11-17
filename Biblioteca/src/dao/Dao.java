@@ -66,4 +66,14 @@ public class Dao <T> implements Serializable{
         manager.close();
         return objeto;
     }
+     
+     public void excluir(Integer id) {
+        manager = JpaUtil.getEntityManager();
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        T temp = manager.find(classe, id);
+        manager.remove(temp);
+        tx.commit();
+        manager.close();
+    }
 }

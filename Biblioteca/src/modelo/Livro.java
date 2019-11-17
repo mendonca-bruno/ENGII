@@ -80,6 +80,6 @@ public class Livro implements Serializable{
     @Override
     public String toString(){
         String teste = codigo.toString();
-        return teste;
+        return "Area: " +getTitulo().getArea().getDesc()+" Autor: " +getTitulo().getAutor().getNomeAutor();
     }
 }

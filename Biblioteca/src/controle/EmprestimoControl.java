@@ -6,6 +6,7 @@
 package controle;
 
 import dao.Dao;
+import modelo.Aluno;
 import modelo.Emprestimo;
 
 /**
@@ -19,5 +20,18 @@ public class EmprestimoControl {
         Emprestimo emp;
         emp = dao.buscaCodigo(chave);
         return emp;
+    }
+    
+    public boolean devolver(Aluno al){
+        Emprestimo emp = new Emprestimo(al);
+        emp.setAtivo(false);
+        dao.alterar(emp);
+        excluir(al);
+        return true;
+    }
+    
+    public void excluir(Aluno al){
+        Emprestimo emp = new Emprestimo(al);
+        dao.excluir(emp.getIdEmprestimo());
     }
 }

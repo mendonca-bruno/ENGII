@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,6 +33,8 @@ public class Emprestimo implements Serializable{
     Date data_aux;
     @ElementCollection(targetClass=Item.class)
     List<Item> item;
+    @Column(nullable = true)
+    boolean ativo;
     
     public Emprestimo(){
         
@@ -43,6 +46,7 @@ public class Emprestimo implements Serializable{
         data_aux = new Date();
         item = new ArrayList<Item>();
         idEmprestimo = a.RA;
+        ativo = false;
     }
     
     public boolean emprestar(ArrayList<Livro> livros) {
@@ -63,6 +67,7 @@ public class Emprestimo implements Serializable{
     		System.out.print("\nNumero de Livros Emprestados: "+livros.size());
                 System.out.print("\nData de Empréstimo: "+this.dataEmprestimo);
                 System.out.print("\nData de Devolução: "+this.dataPrevista);
+                ativo = true;
     		return true;
     	
     	
@@ -108,6 +113,30 @@ public class Emprestimo implements Serializable{
 
     public void setItem(List<Item> item) {
         this.item = item;
+    }
+
+    public Date getDataPrevista() {
+        return dataPrevista;
+    }
+
+    public void setDataPrevista(Date dataPrevista) {
+        this.dataPrevista = dataPrevista;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public int getIdEmprestimo() {
+        return idEmprestimo;
+    }
+
+    public void setIdEmprestimo(int idEmprestimo) {
+        this.idEmprestimo = idEmprestimo;
     }
         
         
